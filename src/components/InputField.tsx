@@ -67,7 +67,7 @@ export default function InputField<T extends FieldValues>({
               }}
             >
               <Ionicons
-                name={isPasswordVisible ? "eye-outline" : "eye-off-outline"}
+                name={isPasswordVisible ? "eye-off-outline" : "eye-outline"}
                 size={22}
                 color="#777"
               />

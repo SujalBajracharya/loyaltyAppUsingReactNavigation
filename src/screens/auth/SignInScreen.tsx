@@ -10,7 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { z } from "zod";
 import AppText from "../../components/AppText";
 import styles from "../../styles/styles";
-import { useOnboarding } from "@/hooks/useOnboarding";
+import { useOnboarding } from "@/context/OnboardingProvider";
 // import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 // type SignInScreenProps =

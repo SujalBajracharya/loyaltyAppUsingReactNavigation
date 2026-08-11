@@ -1,5 +1,5 @@
 import Button from "@/components/Button";
-import { useOnboarding } from "@/hooks/useOnboarding";
+import { useOnboarding } from "@/context/OnboardingProvider";
 import styles from "@/styles/accountStyles";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";

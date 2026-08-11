@@ -4,7 +4,7 @@ import Pagination from "../../components/pagination";
 import styles from "../../styles/styles";
 import AppText from "../../components/AppText";
 import Button from "@/components/Button";
-import { useOnboarding } from "@/hooks/useOnboarding";
+import { useOnboarding } from "@/context/OnboardingProvider";
 
 export default function OnboardingFinalScreen() {
   const {completeOnboarding} = useOnboarding();

@@ -1,5 +1,10 @@
-import AppNavigator from "@/navigation/RootNavigator";
+import RootNavigator from "@/navigation/RootNavigator";
+import { OnboardingProvider } from "@/context/OnboardingProvider";
 
 export default function App() {
-  return <AppNavigator />;
+  return (
+    <OnboardingProvider>
+      <RootNavigator />
+    </OnboardingProvider>
+  );
 }

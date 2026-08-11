@@ -8,7 +8,7 @@ import Button from "@/components/Button";
 import Icon1 from "@assets/OnboardingLogo1.svg";
 import Icon2 from "@assets/OnboardingLogo2.svg";
 import Icon3 from "@assets/OnboardingLogo3.svg";
-import { useOnboarding } from "@/hooks/useOnboarding";
+import { useOnboarding } from "@/context/OnboardingProvider";
 
 export default function OnboardingScreen({ navigation }: { navigation: any }) {
   const {completeOnboarding} = useOnboarding();

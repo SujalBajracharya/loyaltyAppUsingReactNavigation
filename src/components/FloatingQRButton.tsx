@@ -1,8 +1,11 @@
+import { MainStackParamList } from "@/navigation/MainNavigation";
 import QR from "@assets/qrcode.svg";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-const FloatingQRButton = ({navigation}: {navigation: any}) => {
+const FloatingQRButton = () => {
+  const navigation = useNavigation<NavigationProp<MainStackParamList>>();
 
   const styles = StyleSheet.create({
     fab: {
