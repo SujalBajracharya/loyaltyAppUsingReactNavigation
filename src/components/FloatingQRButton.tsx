@@ -1,4 +1,4 @@
-import { MainStackParamList } from "@/navigation/MainNavigation";
+import { MainStackParamList } from "@/navigation/TabNavigator";
 import QR from "@assets/qrcode.svg";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import React from "react";

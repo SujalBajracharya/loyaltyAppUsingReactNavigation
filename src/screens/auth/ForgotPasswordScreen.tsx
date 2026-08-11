@@ -41,7 +41,7 @@ export default function SignupProcessScreen({navigation}: {navigation : any}) {
         forgotData.email == data.email
       ) {
         console.log(`Email matched \n Sending OTP to ${forgotData}`);
-        navigation.navigate("SignupForm");
+        navigation.navigate("InitialScreen");
       } else {
         console.log(`Email didnt match. \n Enter your Email`);
       }

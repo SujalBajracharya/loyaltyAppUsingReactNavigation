@@ -38,11 +38,6 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
   const getProducts = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
-      const fetchedUser = await AsyncStorage.getItem("username");
-
-      if (fetchedUser !== null) {
-        setUser(fetchedUser);
-      }
       setProducts(response.data);
     } catch (error) {
       console.log(error);
@@ -51,7 +46,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
 
   const loadUser = async () => {
     try {
-      const token = await AsyncStorage.getItem("JWT token");
+      const token = await AsyncStorage.getItem("JWT_token");
 
       if (token) {
         const decoded = jwtDecode<JwtPayload>(token);

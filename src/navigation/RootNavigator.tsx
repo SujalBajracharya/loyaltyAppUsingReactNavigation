@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import OnboardingNavigator from "@/navigation/OnboardingNavigator";
 import AuthNavigator from "@/navigation/AuthNavigator";
-import MainNavigator from "@/navigation/MainNavigation"
+import TabNavigator from "@/navigation/TabNavigator"
 import { useOnboarding } from "@/context/OnboardingProvider";
 
 export default function RootNavigator() {
@@ -12,7 +12,7 @@ export default function RootNavigator() {
     <NavigationContainer>
       {hasCompletedOnboarding ? (
         isSignedIn ? (
-          <MainNavigator />
+          <TabNavigator />
         ) : (
           <AuthNavigator />
         )

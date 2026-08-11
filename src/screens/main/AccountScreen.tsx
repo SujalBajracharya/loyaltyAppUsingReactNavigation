@@ -49,7 +49,7 @@ export default function AccountScreen({navigation}: {navigation: any}) {
   const {completeSignOut} = useOnboarding();
   const loadUser = async () => {
     try {
-      const token = await AsyncStorage.getItem("JWT token");
+      const token = await AsyncStorage.getItem("JWT_token");
 
       if (token) {
         const decoded = jwtDecode<JwtPayload>(token);

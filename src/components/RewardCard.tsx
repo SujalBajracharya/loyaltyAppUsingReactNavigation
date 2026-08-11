@@ -30,7 +30,7 @@ export default function RewardCard({
     >
       <Image style={styles.image} source={{ uri: image }} />
 
-      <AppText variant="medium" weight="800" style={{ fontSize: 16 }}>
+      <AppText variant="medium" weight="800" style={{ fontSize: 16 }} numberOfLines={2}>
         {title}
       </AppText>
 
@@ -54,7 +54,7 @@ export default function RewardCard({
       <Button
         style={{ borderRadius: 24 }}
         title="Redeem"
-        onPress={() => navigation.navigate("Product", {id: id})}
+        onPress={() => navigation.push("Product", {id: id})}
       />
     </View>
   );
