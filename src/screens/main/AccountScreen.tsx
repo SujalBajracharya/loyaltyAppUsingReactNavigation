@@ -7,6 +7,7 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import {
+  ActivityIndicator,
   Linking,
   ScrollView,
   Text,
@@ -46,6 +47,7 @@ type User = {
 
 export default function AccountScreen({navigation}: {navigation: any}) {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   const {completeSignOut} = useOnboarding();
   const loadUser = async () => {
     try {
@@ -59,6 +61,8 @@ export default function AccountScreen({navigation}: {navigation: any}) {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -72,6 +76,21 @@ export default function AccountScreen({navigation}: {navigation: any}) {
   const Logout = async () => {
     completeSignOut();
   };
+
+  if (loading) {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <ActivityIndicator size="large" />
+    </View>
+  );
+}
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -156,26 +175,6 @@ export default function AccountScreen({navigation}: {navigation: any}) {
           <Text style={styles.value}>Latitude: {latitude}</Text>
           <Text style={styles.value}>Longitude: {longitude}</Text>
         </TouchableOpacity>
-
-        {/* <View style={styles.card}>
-          <MapView
-            style={{ height: 300, width: "100%" }}
-            initialRegion={{
-              latitude: latitude,
-              longitude: longitude,
-              latitudeDelta: 0.05,
-              longitudeDelta: 0.05,
-            }}
-          >
-            <Marker
-              coordinate={{
-                latitude: latitude,
-                longitude: longitude,
-              }}
-              title={user?.username}
-            />
-          </MapView>
-        </View> */}
 
         {/* SignOut Button */}
         <View style={styles.buttonContainer}>

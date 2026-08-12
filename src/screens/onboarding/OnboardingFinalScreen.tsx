@@ -5,9 +5,10 @@ import styles from "../../styles/styles";
 import AppText from "../../components/AppText";
 import Button from "@/components/Button";
 import { useOnboarding } from "@/context/OnboardingProvider";
+import Lock from "@assets/Lock.svg";
 
 export default function OnboardingFinalScreen() {
-  const {completeOnboarding} = useOnboarding();
+  const { completeOnboarding } = useOnboarding();
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -27,6 +28,7 @@ export default function OnboardingFinalScreen() {
             flex: 1,
           }}
         >
+          <Lock width={125} height={125} />
           <View style={{ gap: 12, alignItems: "center" }}>
             <AppText
               variant="medium"
@@ -59,11 +61,7 @@ export default function OnboardingFinalScreen() {
 
         <View style={{ marginTop: 60, gap: 0 }}>
           <Button title="Continue" onPress={completeOnboarding} />
-          <Button
-            title="Skip"
-            variant="ghost"
-            onPress={completeOnboarding}
-          />
+          <Button title="Skip" variant="ghost" onPress={completeOnboarding} />
         </View>
       </View>
     </SafeAreaView>

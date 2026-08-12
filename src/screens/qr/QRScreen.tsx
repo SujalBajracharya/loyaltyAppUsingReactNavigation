@@ -33,7 +33,7 @@ export default function QRScreen({navigation}: {navigation : any}) {
           ? undefined
           : ({ data }) => {
               setScanned(true);
-              navigation.navigate("Home");
+              navigation.navigate("HomeScreen");
               Toast.show({
                 type: "success",
                 text1: "QR reads:",

@@ -4,14 +4,19 @@
     "slug": "MyNavigationApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/SplashScreen.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/SplashScreen.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "image": "./assets/SplashScreen.png",
+          "resizeMode": "cover"
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -21,10 +26,17 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.dumpcc.MyNavigationApp"
     },
     "web": {
-      "favicon": "./assets/SplashScreen.png"
-    }
+      "favicon": "./assets/logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4a0f4d6b-727d-4657-98f5-f3d61c126e31"
+      }
+    },
+    "owner": "dumpcc"
   }
 }
